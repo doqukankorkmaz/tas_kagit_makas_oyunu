@@ -1,0 +1,38 @@
+Random r = new Random();
+int bilgisayarcevap = r.Next(1, 4);
+
+    Console.WriteLine("taş(1) / kağıt(2) / makas(3)");
+    Console.Write("şekilinizi seçiniz:");
+    int bencevap = Convert.ToInt32(Console.ReadLine());
+
+    try
+    {
+
+        if (bencevap > 3) throw new Exception("sayı 'üçten büyük' olduğu için hata verdi");
+        {
+            if ((bencevap == 1 && bilgisayarcevap == 3) || (bencevap == 2 && bilgisayarcevap == 1) || (bencevap == 3 && bilgisayarcevap == 2))
+            {
+                Console.WriteLine($"Benim Cevabım: {bencevap} // Bilgisayarın Cevabı: {bilgisayarcevap}");
+                Console.WriteLine("tebrikler kazandınız :)");
+                Console.ReadLine();
+            }
+            else if ((bencevap == 1 && bilgisayarcevap == 1) || (bencevap == 2 && bilgisayarcevap == 2) || (bencevap == 3 && bilgisayarcevap == 3))
+            {
+                Console.WriteLine($"Benim Cevabım: {bencevap} // Bilgisayarın Cevabı: {bilgisayarcevap}");
+                Console.WriteLine("berabere");
+                Console.ReadLine();
+            }
+            else
+            {
+                Console.WriteLine($"Benim Cevabım: {bencevap} // Bilgisayarın Cevabı: {bilgisayarcevap}");
+                Console.WriteLine("Kaybettiniz :(");
+                Console.ReadLine();
+            }
+        }
+    }
+    catch (Exception nesne)
+    {
+        Console.WriteLine("oluşan hata: " + nesne.Message);
+    }
+    
+
